@@ -20,9 +20,17 @@ export default function SetPinPage() {
   };
 
   return (
-    <div className="container" style={{ maxWidth: 520 }}>
-      <h2>Set PIN</h2>
-      <div className="card-panel">
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh',
+    }}
+  >
+    <div className="container" style={{ maxWidth: 520, width: '100%' }}>
+      <h2 style={{ textAlign: 'center' }}>Set PIN</h2>
+      <div className="card-panel" style={{ padding: 20, borderRadius: 8 }}>
         <input
           type="password"
           inputMode="numeric"
@@ -30,16 +38,22 @@ export default function SetPinPage() {
           value={pin}
           onChange={(e) => setPin(e.target.value)}
           maxLength={6}
-          style={{ width: '100%', fontSize: 18 }}
+          style={{ width: '80%', fontSize: 18 }}
         />
-        <button style={{ marginTop: 12, width: '100%' }} onClick={submit} disabled={pin.length !== 6}>
+        <button
+          style={{ marginTop: 12, width: '100%' }}
+          onClick={submit}
+          disabled={pin.length !== 6}
+        >
           Save PIN
         </button>
-        {ok && <p style={{ color: 'green' }}>PIN set</p>}
-        {error && <p style={{ color: 'tomato' }}>{error}</p>}
+        {ok && <p style={{ color: 'green', textAlign: 'center' }}>PIN set</p>}
+        {error && <p style={{ color: 'tomato', textAlign: 'center' }}>{error}</p>}
       </div>
     </div>
-  );
+  </div>
+);
+
 }
 
 
