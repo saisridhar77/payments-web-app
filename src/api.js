@@ -26,7 +26,7 @@ const handle = async (res) => {
 
 export const api = {
   async auth(googleIdToken) {
-    const res = await fetch(`${API_BASE}/login/student`, {
+    const res = await fetch(`/api/login/student`, {
       method: 'POST',
       headers: jsonHeaders(),
       body: JSON.stringify({ token: googleIdToken }),
@@ -35,7 +35,7 @@ export const api = {
   },
 
   async hasPin() {
-    const res = await fetch(`${API_BASE}/student/has-pin`, {
+    const res = await fetch(`/api/student/has-pin`, {
       method: 'GET',
       headers: authHeaders(),
     });
@@ -43,7 +43,7 @@ export const api = {
   },
 
   async setPin(pin) {
-    const res = await fetch(`${API_BASE}/student/set-pin`, {
+    const res = await fetch(`/api/student/set-pin`, {
       method: 'POST',
       headers: authHeaders(),
       body: JSON.stringify({ pin }),
@@ -52,7 +52,7 @@ export const api = {
   },
 
   async validateVendor(vendorId) {
-    const res = await fetch(`${API_BASE}/vendor?vendorId=${encodeURIComponent(vendorId)}`, {
+    const res = await fetch(`/api/vendor?vendorId=${encodeURIComponent(vendorId)}`, {
       method: 'GET',
       headers: authHeaders(),
     });
@@ -60,7 +60,7 @@ export const api = {
   },
 
   async makePayment({ vendorId, amount, pin, deviceId }) {
-    const res = await fetch(`${API_BASE}/transaction`, {
+    const res = await fetch(`/api/transaction`, {
       method: 'POST',
       headers: authHeaders(),
       body: JSON.stringify({ vendorId, amount, pin, deviceId }),
@@ -69,7 +69,7 @@ export const api = {
   },
 
   async requestOtp() {
-    const res = await fetch(`${API_BASE}/student/reset-pin/request-otp`, {
+    const res = await fetch(`/api/student/reset-pin/request-otp`, {
       method: 'POST',
       headers: authHeaders(),
     });
@@ -77,7 +77,7 @@ export const api = {
   },
 
   async verifyOtp({ otp, newPin }) {
-    const res = await fetch(`${API_BASE}/student/reset-pin/verify-otp`, {
+    const res = await fetch(`/api/student/reset-pin/verify-otp`, {
       method: 'POST',
       headers: authHeaders(),
       body: JSON.stringify({ otp, newPin }),
@@ -86,7 +86,7 @@ export const api = {
   },
 
   async transactions() {
-    const res = await fetch(`${API_BASE}/student/transactions`, {
+    const res = await fetch(`/api/student/transactions`, {
       method: 'GET',
       headers: authHeaders(),
     });
