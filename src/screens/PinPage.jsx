@@ -43,7 +43,7 @@ export default function PinPage() {
             value={pin}
             onChange={(e) => setPin(e.target.value)}
             maxLength={6}
-            style={{ width: '100%', fontSize: 18 }}
+            style={{ width: '80%', fontSize: 18 }}
           />
           <button style={{ marginTop: 16, width: '100%' }} onClick={next} disabled={pin.length !== 6}>
             Continue

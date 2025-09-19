@@ -26,7 +26,7 @@ export default function ResetPinVerifyPage() {
           placeholder="OTP"
           value={otp}
           onChange={(e) => setOtp(e.target.value)}
-          style={{ width: '100%', fontSize: 18, marginBottom: 8 }}
+          style={{ width: '80%', fontSize: 18, marginBottom: 8 }}
         />
         <input
           type="password"
@@ -35,7 +35,7 @@ export default function ResetPinVerifyPage() {
           value={pin}
           onChange={(e) => setPin(e.target.value)}
           maxLength={6}
-          style={{ width: '100%', fontSize: 18 }}
+          style={{ width: '80%', fontSize: 18 }}
         />
         <button style={{ marginTop: 12, width: '100%' }} onClick={submit} disabled={!otp || pin.length !== 6}>
           Save new PIN

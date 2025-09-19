@@ -29,9 +29,9 @@ export default function AmountPage() {
             placeholder="Amount"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            style={{ width: '100%', fontSize: 18 }}
+            style={{ width: '80%', fontSize: 18 }}
           />
-          <button style={{ marginTop: 16, width: '100%' }} onClick={next} disabled={!amount}>
+          <button style={{width: '100%' }} onClick={next} disabled={!amount}>
             Continue
           </button>
         </div>
